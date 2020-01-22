@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clear;
+
 createDB(){
     if [[ -d "/c/Users/Eslam/Desktop/ITI/Bash/Ply/ply" ]]
     then
@@ -8,13 +8,18 @@ createDB(){
         read dbname
         if [[ -d "/c/Users/Eslam/Desktop/ITI/Bash/Ply/ply/$dbname" ]]
         then
-            "sorry Database already exists"
+            clear
+            echo "sorry Database already exists"
+            showMenu
         else
             mkdir /c/Users/Eslam/Desktop/ITI/Bash/Ply/ply/$dbname
+            clear
             echo "Database Created"
+            showMenu
         fi
     else
-        echo "making the dir"
+        echo "making the dir this is only done for the first time"
         mkdir ply
+        createDB
     fi
 } 
