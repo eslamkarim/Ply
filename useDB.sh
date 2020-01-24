@@ -5,8 +5,8 @@ useDB(){
     read currentDb
     if [[ -d "/usr/ply/$currentDb" ]]
     then
-        echo "call the menu file of crud operations"
         export currentDb
+        CRUD
     else
         echo "There's no database with name $currentDb"
         useDB

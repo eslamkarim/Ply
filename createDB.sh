@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 createDB(){
     if [[ -d "/usr/ply" ]]
     then
