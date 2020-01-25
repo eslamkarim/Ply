@@ -7,6 +7,8 @@ CRUD(){
         case $opt in
             "Create Table" )
                 echo "create Table"
+                clear
+                createTable
                 break
                 ;;
             "Delete Table" )

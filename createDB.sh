@@ -14,7 +14,10 @@ createDB(){
             mkdir /usr/ply/$dbname
             clear
             echo "Database Created"
-            showMenu
+            currentDb=$dbname
+            export currentDb
+            cd /usr/ply/$dbname
+            CRUD
         fi
     else
         echo "making the dir this is only done for the first time"
