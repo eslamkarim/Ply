@@ -4,6 +4,7 @@ clear;
 . ./createDB.sh
 . ./useDB.sh
 . ./CRUD.sh
+. ./list.sh
 
 showMenu(){
     if [ $EUID -ne 0 ]; then
@@ -27,6 +28,7 @@ showMenu(){
                 ;;
             "List Databases and Tables" )
                 echo "list db and tables"
+                list
                 break
                 ;;
             "Delete DataBase" )

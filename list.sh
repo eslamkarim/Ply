@@ -1,14 +1,18 @@
 #!/bin/bash
 
 list(){
-    databases= ls /usr/ply
-    for db in $databases
-    echo "$db"
+    for db in `ls /usr/ply`
     do
-        for table in "$db"/*
-        do
-            echo "$table"
-        done
+        echo "database: $db"
+        if [ -z "$(ls -A -- "/usr/ply/$db")" ]; 
+        then
+            echo "Empty Database"
+        else
+            for table in `ls /usr/ply/$db`
+            do
+                echo "$table"
+            done
+        fi
         echo "=============================================="
     done
 }
