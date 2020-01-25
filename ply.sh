@@ -6,7 +6,7 @@ clear;
 . ./CRUD.sh
 . ./list.sh
 . ./createTable.sh
-./metadata.sh
+. ./metadata.sh
 
 showMenu(){
     if [ $EUID -ne 0 ]; then

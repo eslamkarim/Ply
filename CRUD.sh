@@ -23,6 +23,10 @@ CRUD(){
                 echo "This is the list tables in $currentDb"
                 break
                 ;;
+            "exit" )
+                echo "Thanks for using Ply"
+                exit
+                ;;
             * )
                 echo "Wrong Selection"
                 ;;
