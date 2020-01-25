@@ -12,6 +12,7 @@ createTable()
 		if [ -f "$tableName" ]
 		then 
 			echo "table already exisit"
+			echo "Enter table name"
 			read tableName
 		else	
 			touch $tableName
@@ -38,13 +39,15 @@ createTable()
 	   echo "Do you want it to be P.KEY (y/n)?"
 	   read ans
 	   pk=0
-	   if [[ $ans=="y" ]] || [[ $ans=="Y" ]]
+	   echo "$ans"
+	   if [[ "$ans" = "y" ]] || [[ "$ans" = "Y" ]]
 	   then
-		pk=1
-       	   fi
+			pk=1
+       	fi 
 	   echo "$colName--$colDataT--$pk" >> $tableName.md
 	   ((j++))
 	done
+	CRUD
 }
 
 
