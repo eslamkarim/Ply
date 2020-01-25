@@ -12,7 +12,7 @@ showMenu(){
         exit 1
     fi
     echo "Welcome to PLY database engine. Please Select an option";
-    select opt in "Create Database" "Use DataBase" "List Databases and Tables" "exit";
+    select opt in "Create Database" "Use DataBase" "List Databases and Tables" "Delete DataBase" "exit";
     do
         case $opt in
             "Create Database" )
@@ -27,6 +27,10 @@ showMenu(){
                 ;;
             "List Databases and Tables" )
                 echo "list db and tables"
+                break
+                ;;
+            "Delete DataBase" )
+                echo "Delete a database"
                 break
                 ;;
             "exit" )
