@@ -17,6 +17,7 @@ CRUD(){
                 ;;
             "Select From Table" )
                 echo "select from a table some attributes"
+                Select
                 break
                 ;;
             "List Tables" )

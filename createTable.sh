@@ -49,9 +49,3 @@ createTable()
 	done
 	CRUD
 }
-
-
-
-
-
-

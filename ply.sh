@@ -7,7 +7,7 @@ clear;
 . ./list.sh
 . ./createTable.sh
 . ./metadata.sh
-
+. ./Select.sh
 showMenu(){
     if [ $EUID -ne 0 ]; then
         echo "The script must have sudo premission."
