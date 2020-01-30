@@ -8,6 +8,7 @@ clear;
 . ./createTable.sh
 . ./metadata.sh
 . ./Select.sh
+. ./DeleteRow.sh
 showMenu(){
     if [ $EUID -ne 0 ]; then
         echo "The script must have sudo premission."
