@@ -18,6 +18,7 @@ CRUD(){
                 ;;
             "Select From Table" )
                 echo "select from a table some attributes"
+                Select
                 break
                 ;;
             "Select all from Table" )
@@ -30,6 +31,11 @@ CRUD(){
 		;;
             "List Tables" )
                 echo "This is the list tables in $currentDb"
+                break
+                ;;
+            "Delete Row" )
+                echo "this is row deletition"
+                DeleteRow
                 break
                 ;;
             "exit" )
