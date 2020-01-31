@@ -39,7 +39,6 @@ createTable()
 	   echo "Do you want it to be P.KEY (y/n)?"
 	   read ans
 	   pk=0
-	   echo "$ans"
 	   if [[ "$ans" = "y" ]] || [[ "$ans" = "Y" ]]
 	   then
 			pk=1

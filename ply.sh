@@ -7,6 +7,10 @@ clear;
 . ./list.sh
 . ./createTable.sh
 . ./metadata.sh
+. ./deleteTable.sh
+. ./deleteDB.sh
+. ./insertRow.sh
+. ./selectAll.sh
 
 showMenu(){
     if [ $EUID -ne 0 ]; then
@@ -35,6 +39,7 @@ showMenu(){
                 ;;
             "Delete DataBase" )
                 echo "Delete a database"
+		deleteDB
                 break
                 ;;
             "exit" )
