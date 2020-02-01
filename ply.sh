@@ -11,6 +11,7 @@ clear;
 . ./deleteDB.sh
 . ./insertRow.sh
 . ./selectAll.sh
+. ./listTables.sh
 
 showMenu(){
     if [ $EUID -ne 0 ]; then

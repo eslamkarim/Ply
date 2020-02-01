@@ -1,6 +1,7 @@
 #!/bin/bash
 
 list(){
+    clear
     if [ -z "$(ls -A -- "/usr/ply")" ]; 
     then
         clear
@@ -22,4 +23,5 @@ list(){
             echo "=============================================="
         done
     fi
+    showMenu
 }

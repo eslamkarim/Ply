@@ -13,7 +13,7 @@ CRUD(){
                 ;;
             "Delete Table" )
                 echo "Delete a table"
-		deleteTable
+		        deleteTable
                 break
                 ;;
             "Select From Table" )
@@ -22,15 +22,16 @@ CRUD(){
                 break
                 ;;
             "Select all from Table" )
-		showTableContent
-		break
-		;;
-	    "Insert Row" )
-		insertRow
-		break
-		;;
+		        showTableContent
+		        break
+		        ;;
+	        "Insert Row" )
+		        insertRow
+		        break
+		        ;;
             "List Tables" )
                 echo "This is the list tables in $currentDb"
+                listTables
                 break
                 ;;
             "Delete Row" )
