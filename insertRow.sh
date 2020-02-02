@@ -1,4 +1,5 @@
 #!/bin/bash
+. ./metadata.sh
 
 insertRow()
 {
@@ -7,7 +8,7 @@ insertRow()
 	do
 		echo "Please enter the table you want to insert into";
     		read tName
-    		if [ -f "$tName" ]
+    		if [ -f "/usr/ply/$currentDb/$tName" ]
     		then
         		break;
     		else
@@ -16,10 +17,10 @@ insertRow()
     		fi
 	done
 
-	numOfRows=$(cat /usr/ply/test/test.md | wc -l)
-	colNames=($(awk 'BEGIN{FS="--"}{if(NR>0)print $1;}' $tName.md))
-	colDType=($(awk 'BEGIN{FS="--"}{if(NR>0)print $2;}' $tName.md))
-	colPK=($(awk 'BEGIN{FS="--"}{if(NR>0)print $3;}' $tName.md))
+	numOfRows=$(cat /usr/ply/$currentDb/$tName.md | wc -l)
+	colNames=($(awk 'BEGIN{FS="--"}{if(NR>0)print $1;}' /usr/ply/$currentDb/$tName.md))
+	colDType=($(awk 'BEGIN{FS="--"}{if(NR>0)print $2;}' /usr/ply/$currentDb/$tName.md))
+	colPK=($(awk 'BEGIN{FS="--"}{if(NR>0)print $3;}' /usr/ply/$currentDb/$tName.md))
 
 	while true
 	do
@@ -73,7 +74,7 @@ insertRow()
 	((i++))		
 	done
 
-	echo "${row[*]}" >>  $tName
+	echo "${row[*]}" >>  /usr/ply/$currentDb/$tName
 	echo "Do you want enter new row (y/n)?"
 	read ans
 	if [[ "$ans" = "n" ]] || [[ "$ans" = "N" ]]

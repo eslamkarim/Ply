@@ -2,7 +2,7 @@
 
 CRUD(){
     echo "Welcome to PLY database engine. Please Select an option";
-    select opt in "Create Table" "Delete Table" "Insert Row" "Select From Table" "Select all from Table" "List Tables" "exit";
+    select opt in "Create Table" "Delete Table" "Insert Row" "Select From Table" "Select all from Table" "List Tables" "Delete Row" "Update Table" "exit";
     do
         case $opt in
             "Create Table" )
@@ -32,6 +32,10 @@ CRUD(){
             "List Tables" )
                 echo "This is the list tables in $currentDb"
                 listTables
+                break
+                ;;
+            "Update Table" )
+                update
                 break
                 ;;
             "Delete Row" )

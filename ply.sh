@@ -12,6 +12,9 @@ clear;
 . ./insertRow.sh
 . ./selectAll.sh
 . ./listTables.sh
+. ./update.sh
+. ./Select.sh
+. ./DeleteRow.sh
 
 showMenu(){
     if [ $EUID -ne 0 ]; then
