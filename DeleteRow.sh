@@ -12,7 +12,6 @@ DeleteRow(){
                             print NR;
                         }
                         }' /usr/ply/$currentDb/$table_name)
-        echo "the line = $line_number"
         if [ -n "$line_number" ]
         then
             sed -i "$line_number d" /usr/ply/$currentDb/$table_name
