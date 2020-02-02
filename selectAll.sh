@@ -12,7 +12,6 @@ showTableContent()
         		break;
     		else
         		echo "There's no table with name $tName"
-        		read tName
     		fi
 	done
 
