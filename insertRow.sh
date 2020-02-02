@@ -4,15 +4,16 @@
 insertRow()
 {
 	tName=""
+	echo "Please enter the table you want to insert into";
+    	read tName
 	while true 
 	do
-		echo "Please enter the table you want to insert into";
-    		read tName
+		
     		if [ -f "/usr/ply/$currentDb/$tName" ]
     		then
         		break;
     		else
-        		echo "There's no table with name $tName"
+        		echo "There's no table with name $tName enter valid name"
         		read tName
     		fi
 	done
@@ -29,13 +30,32 @@ insertRow()
 	row=()
 	while (( i < numOfRows ))
 	do 
+		
 		echo "Enter ${colNames[i]}"
 		read input
-
+			
 		while true
 		do
 		if [ -n "$input" ]
 		then
+			if [ "$i" -eq "0" ]	
+			then
+			   while true
+		           do	
+				value=`awk -F" " -v key=$input '{
+     	  	 			if ($1 == key)
+		        		print "found";
+        				else print "notFound"}' /usr/ply/$currentDb/$tName`
+				if [ "$value" == "notFound" ]
+				then
+					break
+				else
+					echo "this column must be unique enter valid data"
+					read input
+				fi 
+			   done
+			fi
+
 			if [ "${colDType[i]}" == "num" ]
 			then
 			   while true
