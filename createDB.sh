@@ -7,7 +7,7 @@ createDB(){
         do
             echo "Please enter the Database name to create"
             read dbname
-            if [[ $dbname =~ $varchar ]]1
+            if [[ $dbname =~ $varchar ]]
             then
                 if [[ -d "/usr/ply/$dbname" ]]
                 then
