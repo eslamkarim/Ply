@@ -17,27 +17,32 @@ Select(){
 
     echo "Enter The PK"
     read id
+		numOfRows=$(cat /usr/ply/$currentDb/$table | wc -l)
+		if [ "$numOfRows" -gt "0" ]
+		then
 while true
 do
     if [ -n "$id" ]
     then
     	value=`awk -F" " -v key=$id '{
-     	  	 if ($1 == key)
+     		if ($1 == key)
 		        print $0;
-        	else print "notFound"}' /usr/ply/$currentDb/$table`
-	if [ "$value" == "notFound" ]
-	then
-		echo "id is not found please try again"
-		read id
-	else
-		echo $value
-		break
-	fi
-    	
+        	}' /usr/ply/$currentDb/$table`
+		if [ -n "$value" ]
+		then
+			echo $value
+			break	
+		else
+			echo "id is not found please try again"
+			break
+		fi    	
     else
 		echo "enter valid PK"
 		read id 
     fi 
 done
+else 
+	echo "sorry Table is Empty !!!"
+fi
 CRUD
 }
