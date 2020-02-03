@@ -13,7 +13,7 @@ deleteDB()
         		showMenu
     		else
         		echo "There is no Database with name $dbname"
-        		deleteDB
+        		showMenu
     		fi
 	else
 		echo "There is no Database with name $dbname"
