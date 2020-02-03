@@ -22,6 +22,6 @@ DeleteRow(){
         fi
     else
         echo "invalid table"
-        DeleteRow
+        CRUD
     fi
 }
