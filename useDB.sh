@@ -12,7 +12,7 @@ useDB(){
             CRUD
         else
             echo "There's no database with name $currentDb"
-            useDB
+            showMenu
         fi
     else
         echo "please enter Datbase name"
